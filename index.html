@@ -2111,5 +2111,55 @@ if (statsSection) {
     observer.observe(statsSection);
   }
 </script>
+  <script>
+// Sayma efekti (count-up)
+function startCounters() {
+  const counters = document.querySelectorAll('.stat-num');
+
+  counters.forEach(counter => {
+    const rawText = counter.innerText;
+    const numberMatch = rawText.match(/\d+/);
+    if (!numberMatch) return;
+
+    const targetNumber = parseInt(numberMatch[0]);
+    const suffix = rawText.replace(/\d+/, '');
+
+    let currentNumber = 0;
+    const duration = 1500;
+    const stepTime = 20;
+    const steps = duration / stepTime;
+    const increment = targetNumber / steps;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      currentNumber += increment;
+
+      if (step >= steps) {
+        currentNumber = targetNumber;
+        clearInterval(timer);
+      }
+
+      counter.innerText = Math.floor(currentNumber) + suffix;
+    }, stepTime);
+  });
+}
+
+// Görünce çalıştır
+const statsSection = document.querySelector('.stats');
+
+if (statsSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(statsSection);
+}
+</script>
 </body>
 </html>
