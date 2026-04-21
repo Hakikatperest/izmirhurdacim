@@ -1633,6 +1633,29 @@
     </div>
   </div>
 </section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<section style="background: #EEF2EE; padding: 4rem 2rem;">
+  <div style="max-width:800px; margin:0 auto;">
+    <h3 style="text-align:center; font-family:'Playfair Display';">📈 Bakır Fiyatları - Son 7 Gün</h3>
+    <canvas id="fiyatChart" style="background:white; border-radius:24px; padding:1rem;"></canvas>
+  </div>
+</section>
+<script>
+  new Chart(document.getElementById('fiyatChart'), {
+    type: 'line',
+    data: {
+      labels: ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'],
+      datasets: [{
+        label: 'Bakır (TL/kg)',
+        data: [448, 452, 458, 460, 462, 465, 468],
+        borderColor: '#E8A800',
+        backgroundColor: 'rgba(232,168,0,0.1)',
+        fill: true,
+        tension: 0.3
+      }]
+    }
+  });
+</script>
 
 <!-- ════════════════════════════════
      SIK SORULAN SORULAR (SSS)
@@ -1741,6 +1764,24 @@
       <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">📞</span> İzmir hurdacı telefon numarası</a>
       <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">✉️</span> İzmir hurdacı iletişim</a>
     </div>
+  </div>
+</section>
+  <section style="background: #F8F9F8; padding: 4rem 2rem;">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+    <div class="section-label" style="justify-content:center;">Hizmet Haritası</div>
+    <h2 class="section-title">İzmir'in <span style="color:#1A6B54;">Tüm İlçelerine</span> Ulaşıyoruz</h2>
+    <div style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 2rem;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200594.86518596995!2d26.99216023631268!3d38.41511372674902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862b7621a05%3A0x3b7d6c9e8e5d3b4f!2zxLB6bWly!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <p style="margin-top:1rem; color:#6B7280; font-size:0.85rem;">📍 Kırmızı işaretli bölgelerde aktif hizmet veriyoruz.</p>
   </div>
 </section>
 
