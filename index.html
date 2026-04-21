@@ -1799,5 +1799,54 @@
     <span>WhatsApp</span>
   </a>
 </div>
+  // Sayma efekti (count-up) - İzmir Hurdacım
+function startCounters() {
+  const counters = document.querySelectorAll('.stat-num');
+  
+  counters.forEach(counter => {
+    // Rakamın içindeki sayıyı al (örnek: "10+" → 10, "5000+" → 5000)
+    const rawText = counter.innerText;
+    const numberMatch = rawText.match(/\d+/);
+    if (!numberMatch) return;
+    
+    const targetNumber = parseInt(numberMatch[0]);
+    const suffix = rawText.replace(/\d+/, ''); // "+" veya "" gibi ekleri al
+    
+    let currentNumber = 0;
+    const duration = 1500; // 1.5 saniye
+    const stepTime = 20; // 20ms'de bir güncelle
+    const steps = duration / stepTime;
+    const increment = targetNumber / steps;
+    
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      currentNumber += increment;
+      
+      if (step >= steps) {
+        currentNumber = targetNumber;
+        clearInterval(timer);
+      }
+      
+      // Sayıyı yuvarla ve suffix ile birleştir
+      const rounded = Math.floor(currentNumber);
+      counter.innerText = rounded + suffix;
+    }, stepTime);
+  });
+}
+
+// Intersection Observer ile sadece görünür olduğunda başlat
+const statsSection = document.querySelector('.stats');
+if (statsSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(statsSection);
+}
 </body>
 </html>
