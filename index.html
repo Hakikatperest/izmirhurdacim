@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>İzmir Hurdacı | Hurda Metal Alım Satım & Hurda Fiyatları</title>
   <meta name="description" content="İzmir'in en güvenilir hurdacısı. Bayraklı, Karşıyaka, Konak, Çeşme, Menderes ve tüm ilçelerde hurda metal alımı. Ücretsiz keşif, aynı gün ödeme. ☎ 0532 331 61 38">
   <meta name="robots" content="index, follow">
@@ -607,33 +607,85 @@
     .step-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: .4rem; }
     .step-text { font-size: .85rem; color: var(--gray); line-height: 1.7; font-weight: 300; }
 
-    /* ── SEO MAKALELER ── */
-    .seo-section { background: var(--white); }
-    .seo-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; max-width: 1100px; margin: 0 auto; }
-    .seo-main h2 { font-family: var(--font-head); font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .seo-main h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green); margin: 2rem 0 .6rem; }
-    .seo-main p { color: var(--gray); font-size: .94rem; line-height: 1.9; margin-bottom: .8rem; font-weight: 300; }
-    .seo-main ul { margin-left: 1.5rem; margin-bottom: .8rem; }
-    .seo-main ul li { color: var(--gray); font-size: .9rem; line-height: 1.9; font-weight: 300; }
-    .seo-main a { color: var(--green); text-decoration: none; font-weight: 500; }
-    .seo-main a:hover { text-decoration: underline; }
-
-    /* Sidebar articles */
-    .seo-sidebar {}
-    .sidebar-title { font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 1.2rem; padding-bottom: .8rem; border-bottom: 1.5px solid var(--border); }
-    .article-list { display: flex; flex-direction: column; gap: .6rem; }
-    .article-link {
-      display: flex; flex-direction: column; gap: .3rem;
-      padding: 1rem 1.2rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      text-decoration: none;
-      transition: border-color .2s, box-shadow .2s;
+    /* ── SEO METİN (DETAYLI BİLGİLENDİRME) ── */
+    .seo-detailed-section {
+      background: var(--white);
+      padding: 5rem 2rem;
     }
-    .article-link:hover { border-color: rgba(26,107,84,.25); box-shadow: var(--shadow-sm); }
-    .article-link-title { font-size: .9rem; font-weight: 600; color: var(--dark); font-family: var(--font-head); }
-    .article-link-meta { font-size: .76rem; color: var(--gray-lt); letter-spacing: .5px; }
+    .seo-detailed-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .seo-detailed-container h2 {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+    .seo-detailed-container h3 {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      margin: 2rem 0 1rem;
+    }
+    .seo-detailed-container p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .seo-detailed-container ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .seo-detailed-container ul li {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 0.25rem;
+    }
+    .seo-detailed-container strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .seo-detailed-container a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .seo-detailed-container a:hover {
+      text-decoration: underline;
+    }
+    .seo-detailed-container table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f9fafb;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .seo-detailed-container th,
+    .seo-detailed-container td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .seo-detailed-container th {
+      background: #e5e7eb;
+      font-weight: 600;
+    }
+    .seo-detailed-container tr:last-child td {
+      border-bottom: none;
+    }
+    @media (max-width: 768px) {
+      .seo-detailed-container h2 { font-size: 1.6rem; }
+      .seo-detailed-container h3 { font-size: 1.2rem; }
+      .seo-detailed-container th, .seo-detailed-container td { padding: 8px; font-size: 0.85rem; }
+    }
 
     /* ── CTA BAND ── */
     .cta-band {
@@ -815,7 +867,7 @@
       border-top: 0px solid transparent;
     }
     .faq-item.active .faq-answer {
-      max-height: 300px; /* Yeterli yükseklik, içerik uzarsa arttırılabilir */
+      max-height: 300px;
       padding: 0 1.8rem 1.5rem 1.8rem;
       border-top-width: 1px;
       border-top-color: var(--border);
@@ -973,208 +1025,9 @@
     </div>
   </div>
 </div>
-  <!-- ═══════════════════════════════════════════════════════════════════
-     SEO METİN + MAKALELER (GENİŞLETİLMİŞ & BİLGİLENDİRİCİ VERSİYON)
-═══════════════════════════════════════════════════════════════════════ -->
-<section class="seo-section" aria-labelledby="seoBaslik">
-  <div class="seo-grid">
-    <div class="seo-main reveal">
-      <h2 id="seoBaslik">İzmir Hurdacı — 7/24 Profesyonel Metal Hurda Alım Satım Hizmetleri</h2>
-      <p>
-        <strong>İzmir hurdacı</strong> denildiğinde akla gelen ilk adres <strong>İzmir Hurdacım</strong> olarak, yarım asrı aşan sektörel tecrübemiz ve çevreye duyarlı yaklaşımımızla hizmetinizdeyiz. 
-        İzmir’in tüm ilçelerinde, <strong>hurda demir alımı</strong>, <strong>bakır hurda alımı</strong>, <strong>alüminyum hurda</strong>, <strong>paslanmaz çelik</strong>, <strong>kablo hurdası</strong>, <strong>akü hurdası</strong>, <strong>pirinç (sarı) hurda</strong> ve <strong>çatı hurdası</strong> alımını en şeffaf ve rekabetçi fiyatlarla gerçekleştiriyoruz.
-      </p>
-      <p>
-        Hizmet ağımız merkez ve çevre ilçeleri kapsamaktadır: 
-        <a href="/bayrakli-hurdaci">Bayraklı</a>, <a href="/menderes-hurdaci">Menderes</a>, <a href="/cesme-hurdaci">Çeşme</a>, <a href="/karsiyaka-hurdaci">Karşıyaka</a>, <a href="/konak-hurdaci">Konak</a>, <a href="/kemalpasa-hurdaci">Kemalpaşa</a>, <a href="/menemen-hurdaci">Menemen</a>, <a href="/balcova-hurdaci">Balçova</a>, <a href="/karabaglar-hurdaci">Karabağlar</a>, <a href="/guzelbahce-hurdaci">Güzelbahçe</a>, <a href="/bornova-hurdaci">Bornova</a>, <a href="/buca-hurdaci">Buca</a>, <a href="/gaziemir-hurdaci">Gaziemir</a> ve <a href="/odemis-hurdaci">Ödemiş</a> gibi geniş bir coğrafyada profesyonel hizmet sunmaktayız.
-      </p>
-
-      <h3>İzmir'de Hangi Metalleri Alıyoruz? (Kapsamlı Liste)</h3>
-      <p>
-        Atık metallerin geri dönüşümü, hem ekonomik hem de ekolojik açıdan büyük önem taşır. İzmir Hurdacım olarak aşağıdaki kategorilerde alım yapıyoruz:
-      </p>
-      <ul>
-        <li><strong>Demir Hurda:</strong> Sac, profil, kiriş, lama, boru, radyatör, şasi, inşaat demiri, pres demiri, ağır hurda.</li>
-        <li><strong>Bakır Hurda:</strong> Sökülmüş kablo bakırı, masa başı bakır, kırmızı bakır, sarı bakır, leş bakır, ince ve kalın bakır tel.</li>
-        <li><strong>Alüminyum Hurda:</strong> Alüminyum profil, pencere doğraması, alüminyum levha, talaş, kırma, içecek kutusu, jant, motor bloğu.</li>
-        <li><strong>Paslanmaz Çelik (304 - 316):</strong> Endüstriyel paslanmaz, mutfak ekipmanları, kazan, boru, lavabo, sac.</li>
-        <li><strong>Pirinç (Sarı Hurda):</strong> Sarı pirinç, red brass, kovan, vana, söküm sarı, kalorifer peteği (kombi bakırı).</li>
-        <li><strong>Kablo Hurda:</strong> Enerji kablosu, telekom kablosu, jiletli kablo, inşaat kablosu, kablo soyulmuş/soyulmamış.</li>
-        <li><strong>Akü Hurda:</strong> Eski araç aküleri, traktör aküsü, iş makinesi aküsü (lisanslı geri dönüşüm belgemiz mevcuttur).</li>
-        <li><strong>Çatı Hurdası:</strong> Galvaniz saç, trapez sac, oluklu çatı kaplaması, yağmur oluğu, çinko ve kurşun kaplama.</li>
-        <li><strong>Motor & Şanzıman:</strong> Hurda motor bloğu, alüminyum motor, döküm motor, şanzıman.</li>
-        <li><strong>Endüstriyel Atık:</strong> Fabrika demonte hurdası, üretim artığı, talaş, tel çapak, pres atığı.</li>
-      </ul>
-
-      <h3>İzmir Hurda Fiyatları 2026 — Günlük Güncellenen Tablo</h3>
-      <p>
-        Hurda fiyatları döviz kuru, enerji maliyetleri, piyasa arz/talep dengesi ve uluslararası emtia fiyatlarına göre günlük değişiklik göstermektedir. 
-        İzmir genelinde en güncel <strong>hurda demir fiyatı</strong>, <strong>bakır hurda fiyatı</strong>, <strong>sarı hurda fiyatı</strong> ve <strong>alüminyum hurda fiyatı</strong> için bizi arayın.
-      </p>
-      <p>
-        📞 <strong>Fiyat teklifi ve randevu için hemen arayın:</strong> <a href="tel:+905323316138">0532 331 61 38</a> (Telefon & WhatsApp). 
-        WhatsApp üzerinden stok fotoğrafı veya video göndererek anlık fiyat alabilir, aynı gün hızlı alım süreci başlatabilirsiniz.
-      </p>
-      <p><em>Not: Aşağıdaki fiyatlar bağlayıcı olmayıp yol gösterici niteliktedir. En doğru fiyat için lütfen arayınız.</em></p>
-      <!-- Basit fiyat tablosu örneği -->
-      <div style="overflow-x: auto; margin: 20px 0;">
-        <table style="width:100%; border-collapse: collapse; background: #f9fafb; border-radius: 16px;">
-          <thead>
-            <tr><th style="padding: 12px; text-align: left; background: #e5e7eb;">Hurda Cinsi</th><th style="padding: 12px; text-align: left; background: #e5e7eb;">Açıklama</th><th style="padding: 12px; text-align: left; background: #e5e7eb;">Fiyat Aralığı (TL/kg)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td style="padding: 8px; border-bottom:1px solid #ddd;">Hurda Demir</td><td style="padding: 8px; border-bottom:1px solid #ddd;">Şase, profil, sac, inşaat demiri</td><td style="padding: 8px; border-bottom:1px solid #ddd;">8,00 - 15,00</td></tr>
-            <tr><td style="padding: 8px; border-bottom:1px solid #ddd;">Kırmızı Bakır (Temiz)</td><td style="padding: 8px; border-bottom:1px solid #ddd;">Sökülmüş, leşsiz, temiz bakır</td><td style="padding: 8px; border-bottom:1px solid #ddd;">400 - 500</td></tr>
-            <tr><td style="padding: 8px; border-bottom:1px solid #ddd;">Sarı Pirinç Hurda</td><td style="padding: 8px; border-bottom:1px solid #ddd;">Vana, kovan, söküm pirinç</td><td style="padding: 8px; border-bottom:1px solid #ddd;">180 - 220</td></tr>
-            <tr><td style="padding: 8px; border-bottom:1px solid #ddd;">Alüminyum (Profil)</td><td style="padding: 8px; border-bottom:1px solid #ddd;">Temiz alüminyum doğrama, levha</td><td style="padding: 8px; border-bottom:1px solid #ddd;">65 - 110</td></tr>
-            <tr><td style="padding: 8px; border-bottom:1px solid #ddd;">Paslanmaz 304</td><td style="padding: 8px; border-bottom:1px solid #ddd;">Endüstriyel paslanmaz</td><td style="padding: 8px; border-bottom:1px solid #ddd;">18 - 32</td></tr>
-            <tr><td style="padding: 8px;">Hurda Akü</td><td style="padding: 8px;">Adet bazlı (kurşun-plastik)</td><td style="padding: 8px;">90 - 180 TL/adet</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>İzmir'de Evden Hurda Alanlar — Kapınıza Gelen Profesyonel Hizmet</h3>
-      <p>
-        Evinizde, apartman bodrumunuzda, iş yerinizde veya şantiyenizde biriken eski metaller için ayrı taşıma masrafı yoktur. <strong>İzmir evden hurda alan</strong> firmamız, 
-        siz aradıktan sonra ekibimizi adresinize yönlendirir. Ücretsiz keşif, şeffaf tartı (mobil kantar veya sabit kantarla) ve aynı gün ödeme garantisi veriyoruz. 
-        Küçük miktarlar için bile ekip gönderiyor, hiçbir hurdayı geride bırakmıyoruz.
-      </p>
-
-      <h3>İzmir'de Çatı Hurdası Alan Yerler — Büyük Hacimli İşlerde Uzman Ekip</h3>
-      <p>
-        Fabrika, depo, plaza, ahır, konut veya tesis çatılarının yenilenmesi sırasında ortaya çıkan <strong>çatı hurdası alımı</strong> konusunda uzmanız. 
-        Galvaniz saç, oluklu çinko, alüminyum kaplama, paslanmaz çatı malzemesi, kurşun kaplama gibi her türlü çatı metalini değerinde alıyoruz. 
-        Yerinde keşif yapılır, işçilik ve söküm desteği sağlanır (opsiyonel), çevre mevzuatına uygun şekilde atık beyanı düzenlenir.
-      </p>
-
-      <h3>İzmir'de Hurda Alım Süreci Nasıl İşler? (Adım Adım)</h3>
-      <ul>
-        <li>📞 <strong>İletişim:</strong> Telefon veya WhatsApp ile hurda cinsiniz ve yaklaşık miktarınız hakkında bilgi verin.</li>
-        <li>🔍 <strong>Ücretsiz Keşif & Teklif:</strong> Ekibimiz belirtilen adrese gelir, numune alır, dijital kantar ile tartım yapar veya hacim tahmininde bulunur.</li>
-        <li>⚖️ <strong>Şeffaf Tartı:</strong> Sabit kantarlarımızda veya mobil kantarımızla hurda tartılır, anlık görüntü paylaşılır. Güncel piyasa fiyatı üzerinden hesaplama yapılır.</li>
-        <li>✅ <strong>Nakit Ödeme / Havale / EFT:</strong> Anlaşma sağlanır sağlanmaz aynı gün içinde nakit ödeme veya banka havalesi yapılır. Çek veya senet kullanılmaz.</li>
-        <li>📄 <strong>Atık Beyanı ve Raporlama:</strong> Çevre ve Şehircilik Bakanlığı lisansımız gereği, endüstriyel atıklar için resmi atık beyan formu düzenlenir.</li>
-        <li>🚛 <strong>Nakliye ve Temizlik:</strong> Hurda alındıktan sonra bölgeniz temiz bırakılır, tüm yükleme ve nakliye işlemleri firmamız tarafından karşılanır.</li>
-      </ul>
-
-      <h3>İzmir'de Güvenilir Hurdacı Nasıl Bulunur? İzmir Hurdacım Farkı</h3>
-      <p>
-        İzmir gibi büyük bir metropolde <strong>güvenilir hurdacı</strong> bulmak bazen zor olabilir. İzmir Hurdacım olarak;
-        <ul>
-          <li>✅ 10 yılı aşkın sektör deneyimi,</li>
-          <li>✅ Çevre lisansı ve resmi işletme yetkisi,</li>
-          <li>✅ Şeffaf fiyat politikası ve günlük kur takibi,</li>
-          <li>✅ Sabit işletme adresi ve referansları,</li>
-          <li>✅ 7/24 telefon desteği ve hızlı ekip yönlendirmesi</li>
-        </ul>
-        ile binlerce mutlu müşteriye hizmet vermiş bulunmaktayız. 
-        <a href="/bayrakli-hurdaci">Bayraklı hurdacı</a>, <a href="/karsiyaka-hurdaci">Karşıyaka hurdacı</a> ve <a href="/konak-hurdaci">Konak hurdacı</a> aramalarında en çok tercih edilen firmalar arasındayız.
-      </p>
-
-      <h3>Sık Sorulan Sorular (SSS) — İzmir Hurda Alımı Hakkında Merak Edilenler</h3>
-      <div style="background:#f3f4f6; border-radius: 20px; padding: 16px; margin-top: 20px;">
-        <p><strong>Soru 1:</strong> Evde biriken küçük miktar hurda için gelir misiniz? <br>
-        <strong>Cevap:</strong> Evet, 50 kg altı hurda için bile ekibimiz gelir. Minimum miktar sınırımız yoktur.</p>
-        
-        <p><strong>Soru 2:</strong> İzmir dışındaki ilçelere de hizmet veriyor musunuz? <br>
-        <strong>Cevap:</strong> Öncelikli olarak İzmir merkez ve tüm ilçelerine hizmet vermekteyiz. Yüksek tonajlı işlerde çevre illere de talep halinde gidilmektedir.</p>
-        
-        <p><strong>Soru 3:</strong> Hurda fiyatları neden her gün değişiyor? <br>
-        <strong>Cevap:</strong> Hurda, küresel emtia piyasalarına bağlıdır. Dolar/TL, Çin talebi, enerji fiyatları gibi faktörler anlık fiyat değişimine neden olur. En güncel fiyat için bizi arayınız.</p>
-        
-        <p><strong>Soru 4:</strong> Ruhsatsız hurdacılardan farkınız nedir? <br>
-        <strong>Cevap:</strong> Lisanslı ve vergi kaydımız mevcuttur. Atık beyanı verir, çevre mevzuatına uygun hareket ederiz. Ayrıca güvenli ödeme ve resmi tartı garantisi sunarız.</p>
-      </div>
-    </div>
-
-    <div class="seo-sidebar reveal">
-      <div class="sidebar-title">📘 Güncel Makaleler & Rehberler</div>
-      <div class="article-list">
-        <a href="#fiyatlar" class="article-link">
-          <span class="article-link-title">💰 İzmir Güncel Hurda Fiyatları 2026 (Tablo & Grafik)</span>
-          <span class="article-link-meta">Demir · Bakır · Alüminyum · Pirinç · Paslanmaz</span>
-        </a>
-        <a href="#fiyatlar" class="article-link">
-          <span class="article-link-title">⚡ İzmir Bakır Hurda Fiyatı Ne Kadar? (Kırmızı/Sarı Bakır)</span>
-          <span class="article-link-meta">Güncel Piyasa Bilgisi + İpuçları</span>
-        </a>
-        <a href="#fiyatlar" class="article-link">
-          <span class="article-link-title">🟡 Sarı Hurda (Pirinç) Fiyatı 2026 — İzmir Özel</span>
-          <span class="article-link-meta">Vana, Kovan, Söküm Pirinç Fiyatları</span>
-        </a>
-        <a href="#fiyatlar" class="article-link">
-          <span class="article-link-title">🔩 İzmir Demir Hurda Fiyatı 2026 (Günlük Güncellenen Liste)</span>
-          <span class="article-link-meta">Hurda Demir · Profil · Sac · Şasi</span>
-        </a>
-        <a href="#hizmetler" class="article-link">
-          <span class="article-link-title">🏠 İzmir'de Evden Hurda Alanlar — En Hızlı Servis</span>
-          <span class="article-link-meta">Ücretsiz Taşıma · Aynı Gün Ödeme · Temiz İş</span>
-        </a>
-        <a href="#hizmetler" class="article-link">
-          <span class="article-link-title">🔌 Kablo Hurdası Nasıl Satılır? (Bakır & Alüminyum Kablo)</span>
-          <span class="article-link-meta">Soyulmuş/soyulmamış kablo fiyatları</span>
-        </a>
-        <a href="#hizmetler" class="article-link">
-          <span class="article-link-title">🏗️ Çatı Hurdası Alan Yerler — İzmir Çatı Sökümü & Alımı</span>
-          <span class="article-link-meta">Sac · Galvaniz · Oluklu · Çinko · Kurşun</span>
-        </a>
-        <a href="#hizmetler" class="article-link">
-          <span class="article-link-title">🔋 Akü Hurda Fiyatı İzmir 2026 (Güncel Liste)</span>
-          <span class="article-link-meta">Otomobil, Traktör, İş Makinesi Aküsü</span>
-        </a>
-        <a href="#hizmetler" class="article-link">
-          <span class="article-link-title">🔩 Paslanmaz Çelik Hurda Alımı — 304 & 316 Farkı</span>
-          <span class="article-link-meta">Her Cins · Yerinde Tartı · Profesyonel Keşif</span>
-        </a>
-        <a href="#ilceler" class="article-link">
-          <span class="article-link-title">📊 İzmir Hurda Firmaları Karşılaştırması 2026</span>
-          <span class="article-link-meta">Neden İzmir Hurdacım? Fiyat, Güven, Hız</span>
-        </a>
-        <a href="#ilceler" class="article-link">
-          <span class="article-link-title">🏭 Endüstriyel Hurda Yönetimi — Fabrikalar İçin Rehber</span>
-          <span class="article-link-meta">Atık Beyanı · VİP Keşif · Periyodik Alım</span>
-        </a>
-        <a href="#ilceler" class="article-link">
-          <span class="article-link-title">📜 Hurda Satarken Nelere Dikkat Edilmeli? (Hukuki ve Ticari)</span>
-          <span class="article-link-meta">Ruhsat · Tartı · Ödeme Güvencesi</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ════════════════════════════════
-     POPÜLER ARAMALAR
-════════════════════════════════ -->
-<section class="aramalar-section" id="popüler-aramalar" aria-labelledby="aramaBaslik">
-  <div class="aramalar-inner">
-    <div class="section-label reveal">Popüler Aramalar</div>
-    <h2 class="section-title reveal" id="aramaBaslik">Sık Aranan Konular</h2>
-    <p class="section-desc reveal">İzmir hurda alanında en çok merak edilen konular ve hizmetlerimiz.</p>
-    <div class="arama-grid reveal">
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">📈</span> İzmir güncel hurda fiyatları 2026</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">⚖️</span> İzmir hurda kilosu ne kadar</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🟤</span> İzmir bakır hurda fiyatı</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🔩</span> İzmir demir hurda fiyatı</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🥇</span> İzmir sarı hurda fiyatı</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🛡️</span> İzmir paslanmaz hurda</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🔋</span> İzmir akü hurda fiyatı</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🔗</span> İzmir kablo hurda</a>
-      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🥉</span> İzmir pirinç hurda</a>
-      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">🏘️</span> İzmir evden hurda alanlar</a>
-      <a href="#hizmetler" class="arama-pill"><span class="arama-pill-icon">🏗️</span> İzmir çatı hurdası alan yerler</a>
-      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">📍</span> İzmir hurda alan yerler</a>
-      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">🔩</span> İzmir demir hurda alan yerler</a>
-      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">🥇</span> İzmir sarı hurda alan yerler</a>
-      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">🟤</span> İzmir bakır hurda alan yerler</a>
-      <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">📞</span> İzmir hurdacı telefon numarası</a>
-      <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">✉️</span> İzmir hurdacı iletişim</a>
-      <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">🏢</span> İzmir hurda firmaları</a>
-    </div>
-  </div>
-</section>
 
 <!-- ════════════════════════════════
-     HİZMETLER
+     HİZMETLER (NE ALIYORUZ?)
 ════════════════════════════════ -->
 <section class="services-section" id="hizmetler" aria-labelledby="hizmetlerBaslik">
   <div style="max-width:1100px;margin:0 auto;">
@@ -1217,37 +1070,103 @@
 </section>
 
 <!-- ════════════════════════════════
-     NASIL ÇALIŞIR (PROCESS)
+     DETAYLI SEO METNİ (BİLGİLENDİRME)
 ════════════════════════════════ -->
-<section class="process-section" aria-labelledby="processBaslik">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:4rem;">
-      <div class="section-label reveal" style="justify-content:center;display:flex;">Süreç</div>
-      <h2 class="section-title reveal" id="processBaslik" style="text-align:center;">Nasıl Çalışır?</h2>
-      <p class="section-desc reveal" style="margin:0 auto;">4 adımda hızlı, güvenilir ve sorunsuz hurda alım süreci.</p>
+<section class="seo-detailed-section" aria-labelledby="seoDetayBaslik">
+  <div class="seo-detailed-container reveal">
+    <h2 id="seoDetayBaslik">İzmir Hurdacı — 7/24 Profesyonel Metal Hurda Alım Satım Hizmetleri</h2>
+    <p>
+      <strong>İzmir hurdacı</strong> denildiğinde akla gelen ilk adres <strong>İzmir Hurdacım</strong> olarak, yarım asrı aşan sektörel tecrübemiz ve çevreye duyarlı yaklaşımımızla hizmetinizdeyiz. 
+      İzmir’in tüm ilçelerinde, <strong>hurda demir alımı</strong>, <strong>bakır hurda alımı</strong>, <strong>alüminyum hurda</strong>, <strong>paslanmaz çelik</strong>, <strong>kablo hurdası</strong>, <strong>akü hurdası</strong>, <strong>pirinç (sarı) hurda</strong> ve <strong>çatı hurdası</strong> alımını en şeffaf ve rekabetçi fiyatlarla gerçekleştiriyoruz.
+    </p>
+    <p>
+      Hizmet ağımız merkez ve çevre ilçeleri kapsamaktadır: 
+      <a href="/bayrakli-hurdaci">Bayraklı</a>, <a href="/menderes-hurdaci">Menderes</a>, <a href="/cesme-hurdaci">Çeşme</a>, <a href="/karsiyaka-hurdaci">Karşıyaka</a>, <a href="/konak-hurdaci">Konak</a>, <a href="/kemalpasa-hurdaci">Kemalpaşa</a>, <a href="/menemen-hurdaci">Menemen</a>, <a href="/balcova-hurdaci">Balçova</a>, <a href="/karabaglar-hurdaci">Karabağlar</a>, <a href="/guzelbahce-hurdaci">Güzelbahçe</a>, <a href="/bornova-hurdaci">Bornova</a>, <a href="/buca-hurdaci">Buca</a>, <a href="/gaziemir-hurdaci">Gaziemir</a> ve <a href="/odemis-hurdaci">Ödemiş</a> gibi geniş bir coğrafyada profesyonel hizmet sunmaktayız.
+    </p>
+
+    <h3>İzmir'de Hangi Metalleri Alıyoruz? (Kapsamlı Liste)</h3>
+    <p>
+      Atık metallerin geri dönüşümü, hem ekonomik hem de ekolojik açıdan büyük önem taşır. İzmir Hurdacım olarak aşağıdaki kategorilerde alım yapıyoruz:
+    </p>
+    <ul>
+      <li><strong>Demir Hurda:</strong> Sac, profil, kiriş, lama, boru, radyatör, şasi, inşaat demiri, pres demiri, ağır hurda.</li>
+      <li><strong>Bakır Hurda:</strong> Sökülmüş kablo bakırı, masa başı bakır, kırmızı bakır, sarı bakır, leş bakır, ince ve kalın bakır tel.</li>
+      <li><strong>Alüminyum Hurda:</strong> Alüminyum profil, pencere doğraması, alüminyum levha, talaş, kırma, içecek kutusu, jant, motor bloğu.</li>
+      <li><strong>Paslanmaz Çelik (304 - 316):</strong> Endüstriyel paslanmaz, mutfak ekipmanları, kazan, boru, lavabo, sac.</li>
+      <li><strong>Pirinç (Sarı Hurda):</strong> Sarı pirinç, red brass, kovan, vana, söküm sarı, kalorifer peteği (kombi bakırı).</li>
+      <li><strong>Kablo Hurda:</strong> Enerji kablosu, telekom kablosu, jiletli kablo, inşaat kablosu, kablo soyulmuş/soyulmamış.</li>
+      <li><strong>Akü Hurda:</strong> Eski araç aküleri, traktör aküsü, iş makinesi aküsü (lisanslı geri dönüşüm belgemiz mevcuttur).</li>
+      <li><strong>Çatı Hurdası:</strong> Galvaniz saç, trapez sac, oluklu çatı kaplaması, yağmur oluğu, çinko ve kurşun kaplama.</li>
+      <li><strong>Motor & Şanzıman:</strong> Hurda motor bloğu, alüminyum motor, döküm motor, şanzıman.</li>
+      <li><strong>Endüstriyel Atık:</strong> Fabrika demonte hurdası, üretim artığı, talaş, tel çapak, pres atığı.</li>
+    </ul>
+
+    <h3>İzmir Hurda Fiyatları 2026 — Günlük Güncellenen Tablo</h3>
+    <p>
+      Hurda fiyatları döviz kuru, enerji maliyetleri, piyasa arz/talep dengesi ve uluslararası emtia fiyatlarına göre günlük değişiklik göstermektedir. 
+      İzmir genelinde en güncel <strong>hurda demir fiyatı</strong>, <strong>bakır hurda fiyatı</strong>, <strong>sarı hurda fiyatı</strong> ve <strong>alüminyum hurda fiyatı</strong> için bizi arayın.
+    </p>
+    <p>
+      📞 <strong>Fiyat teklifi ve randevu için hemen arayın:</strong> <a href="tel:+905323316138">0532 331 61 38</a> (Telefon & WhatsApp). 
+      WhatsApp üzerinden stok fotoğrafı veya video göndererek anlık fiyat alabilir, aynı gün hızlı alım süreci başlatabilirsiniz.
+    </p>
+    <p><em>Not: Aşağıdaki fiyatlar bağlayıcı olmayıp yol gösterici niteliktedir. En doğru fiyat için lütfen arayınız.</em></p>
+    
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr><th>Hurda Cinsi</th><th>Açıklama</th><th>Fiyat Aralığı (TL/kg)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hurda Demir</td><td>Şase, profil, sac, inşaat demiri</td><td>8,00 - 15,00</td></tr>
+          <tr><td>Kırmızı Bakır (Temiz)</td><td>Sökülmüş, leşsiz, temiz bakır</td><td>400 - 500</td></tr>
+          <tr><td>Sarı Pirinç Hurda</td><td>Vana, kovan, söküm pirinç</td><td>180 - 220</td></tr>
+          <tr><td>Alüminyum (Profil)</td><td>Temiz alüminyum doğrama, levha</td><td>65 - 110</td></tr>
+          <tr><td>Paslanmaz 304</td><td>Endüstriyel paslanmaz</td><td>18 - 32</td></tr>
+          <tr><td>Hurda Akü</td><td>Adet bazlı (kurşun-plastik)</td><td>90 - 180 TL/adet</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="process-steps">
-      <div class="process-step reveal delay-1">
-        <div class="step-num">1</div>
-        <div class="step-title">Bizi Arayın</div>
-        <p class="step-text">Telefon veya WhatsApp ile bize ulaşın. Fotoğraf göndererek ön fiyat alabilirsiniz.</p>
-      </div>
-      <div class="process-step reveal delay-2">
-        <div class="step-num">2</div>
-        <div class="step-title">Ücretsiz Keşif</div>
-        <p class="step-text">Ekibimiz belirlenen saatte kapınıza gelir. Taşıma dahil, sizden ek ücret alınmaz.</p>
-      </div>
-      <div class="process-step reveal delay-3">
-        <div class="step-num">3</div>
-        <div class="step-title">Şeffaf Tartı</div>
-        <p class="step-text">Güncel piyasa fiyatıyla şeffaf tartı yapılır. Anlaşmazlık olmadan net teklif.</p>
-      </div>
-      <div class="process-step reveal delay-4">
-        <div class="step-num">4</div>
-        <div class="step-title">Aynı Gün Ödeme</div>
-        <p class="step-text">Nakit veya EFT/havale ile aynı gün ödemenizi alırsınız. Bekleme yok.</p>
-      </div>
-    </div>
+
+    <h3>İzmir'de Evden Hurda Alanlar — Kapınıza Gelen Profesyonel Hizmet</h3>
+    <p>
+      Evinizde, apartman bodrumunuzda, iş yerinizde veya şantiyenizde biriken eski metaller için ayrı taşıma masrafı yoktur. <strong>İzmir evden hurda alan</strong> firmamız, 
+      siz aradıktan sonra ekibimizi adresinize yönlendirir. Ücretsiz keşif, şeffaf tartı (mobil kantar veya sabit kantarla) ve aynı gün ödeme garantisi veriyoruz. 
+      Küçük miktarlar için bile ekip gönderiyor, hiçbir hurdayı geride bırakmıyoruz.
+    </p>
+
+    <h3>İzmir'de Çatı Hurdası Alan Yerler — Büyük Hacimli İşlerde Uzman Ekip</h3>
+    <p>
+      Fabrika, depo, plaza, ahır, konut veya tesis çatılarının yenilenmesi sırasında ortaya çıkan <strong>çatı hurdası alımı</strong> konusunda uzmanız. 
+      Galvaniz saç, oluklu çinko, alüminyum kaplama, paslanmaz çatı malzemesi, kurşun kaplama gibi her türlü çatı metalini değerinde alıyoruz. 
+      Yerinde keşif yapılır, işçilik ve söküm desteği sağlanır (opsiyonel), çevre mevzuatına uygun şekilde atık beyanı düzenlenir.
+    </p>
+
+    <h3>İzmir'de Hurda Alım Süreci Nasıl İşler? (Adım Adım)</h3>
+    <ul>
+      <li>📞 <strong>İletişim:</strong> Telefon veya WhatsApp ile hurda cinsiniz ve yaklaşık miktarınız hakkında bilgi verin.</li>
+      <li>🔍 <strong>Ücretsiz Keşif & Teklif:</strong> Ekibimiz belirtilen adrese gelir, numune alır, dijital kantar ile tartım yapar veya hacim tahmininde bulunur.</li>
+      <li>⚖️ <strong>Şeffaf Tartı:</strong> Sabit kantarlarımızda veya mobil kantarımızla hurda tartılır, anlık görüntü paylaşılır. Güncel piyasa fiyatı üzerinden hesaplama yapılır.</li>
+      <li>✅ <strong>Nakit Ödeme / Havale / EFT:</strong> Anlaşma sağlanır sağlanmaz aynı gün içinde nakit ödeme veya banka havalesi yapılır. Çek veya senet kullanılmaz.</li>
+      <li>📄 <strong>Atık Beyanı ve Raporlama:</strong> Çevre ve Şehircilik Bakanlığı lisansımız gereği, endüstriyel atıklar için resmi atık beyan formu düzenlenir.</li>
+      <li>🚛 <strong>Nakliye ve Temizlik:</strong> Hurda alındıktan sonra bölgeniz temiz bırakılır, tüm yükleme ve nakliye işlemleri firmamız tarafından karşılanır.</li>
+    </ul>
+
+    <h3>İzmir'de Güvenilir Hurdacı Nasıl Bulunur? İzmir Hurdacım Farkı</h3>
+    <p>
+      İzmir gibi büyük bir metropolde <strong>güvenilir hurdacı</strong> bulmak bazen zor olabilir. İzmir Hurdacım olarak;
+    </p>
+    <ul>
+      <li>✅ 10 yılı aşkın sektör deneyimi,</li>
+      <li>✅ Çevre lisansı ve resmi işletme yetkisi,</li>
+      <li>✅ Şeffaf fiyat politikası ve günlük kur takibi,</li>
+      <li>✅ Sabit işletme adresi ve referansları,</li>
+      <li>✅ 7/24 telefon desteği ve hızlı ekip yönlendirmesi</li>
+    </ul>
+    <p>
+      ile binlerce mutlu müşteriye hizmet vermiş bulunmaktayız. 
+      <a href="/bayrakli-hurdaci">Bayraklı hurdacı</a>, <a href="/karsiyaka-hurdaci">Karşıyaka hurdacı</a> ve <a href="/konak-hurdaci">Konak hurdacı</a> aramalarında en çok tercih edilen firmalar arasındayız.
+    </p>
   </div>
 </section>
 
@@ -1401,80 +1320,43 @@
     </div>
   </div>
 </section>
-  <!-- ════════════════════════════════
-     GÜNCEL HURDA FİYATLARI
+
+<!-- ════════════════════════════════
+     NASIL ÇALIŞIR (PROCESS)
 ════════════════════════════════ -->
-<section class="fiyat-section" id="fiyatlar" aria-labelledby="fiyatBaslik">
-  <div class="fiyat-header reveal">
-    <div class="section-label" style="justify-content:center;display:flex;">Güncel Fiyatlar</div>
-    <h2 class="section-title" id="fiyatBaslik" style="color:var(--white);">İzmir Hurda Fiyatları 2026</h2>
-    <p>Günlük piyasa verilerine göre güncellenen referans fiyatlar. Kesin fiyat için lütfen arayın.</p>
-  </div>
-  <div class="fiyat-grid reveal">
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🔩</div>
-      <div class="fiyat-card-name">Hurda Demir Fiyatları</div>
-      <div class="fiyat-card-price">8–15 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Güncel fiyat için arayın</div>
+<section class="process-section" aria-labelledby="processBaslik">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <div class="section-label reveal" style="justify-content:center;display:flex;">Süreç</div>
+      <h2 class="section-title reveal" id="processBaslik" style="text-align:center;">Nasıl Çalışır?</h2>
+      <p class="section-desc reveal" style="margin:0 auto;">4 adımda hızlı, güvenilir ve sorunsuz hurda alım süreci.</p>
     </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🟤</div>
-      <div class="fiyat-card-name">Bakır Hurda Fiyatları</div>
-      <div class="fiyat-card-price">400–500 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Güncel fiyat için arayın</div>
+    <div class="process-steps">
+      <div class="process-step reveal delay-1">
+        <div class="step-num">1</div>
+        <div class="step-title">Bizi Arayın</div>
+        <p class="step-text">Telefon veya WhatsApp ile bize ulaşın. Fotoğraf göndererek ön fiyat alabilirsiniz.</p>
+      </div>
+      <div class="process-step reveal delay-2">
+        <div class="step-num">2</div>
+        <div class="step-title">Ücretsiz Keşif</div>
+        <p class="step-text">Ekibimiz belirlenen saatte kapınıza gelir. Taşıma dahil, sizden ek ücret alınmaz.</p>
+      </div>
+      <div class="process-step reveal delay-3">
+        <div class="step-num">3</div>
+        <div class="step-title">Şeffaf Tartı</div>
+        <p class="step-text">Güncel piyasa fiyatıyla şeffaf tartı yapılır. Anlaşmazlık olmadan net teklif.</p>
+      </div>
+      <div class="process-step reveal delay-4">
+        <div class="step-num">4</div>
+        <div class="step-title">Aynı Gün Ödeme</div>
+        <p class="step-text">Nakit veya EFT/havale ile aynı gün ödemenizi alırsınız. Bekleme yok.</p>
+      </div>
     </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">⚪</div>
-      <div class="fiyat-card-name">Alüminyum Hurda Fiyatları</div>
-      <div class="fiyat-card-price">65–110 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Güncel fiyat için arayın</div>
-    </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🥇</div>
-      <div class="fiyat-card-name">Sarı Hurda / Pirinç Fiyatları</div>
-      <div class="fiyat-card-price">180–240 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Güncel fiyat için arayın</div>
-    </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🔗</div>
-      <div class="fiyat-card-name">Kablo Hurda Fiyatları</div>
-      <div class="fiyat-card-price">140–400 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Cins & kaliteye göre değişir</div>
-    </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🔋</div>
-      <div class="fiyat-card-name">Akü Hurda Fiyatları</div>
-      <div class="fiyat-card-price">20–28 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Güncel fiyat için arayın</div>
-    </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🛡️</div>
-      <div class="fiyat-card-name">Paslanmaz Çelik Fiyatları</div>
-      <div class="fiyat-card-price">18–32 ₺</div>
-      <div class="fiyat-card-unit">kilogram başına</div>
-      <div class="fiyat-card-trend">↑ Güncel fiyat için arayın</div>
-    </div>
-    <div class="fiyat-card">
-      <div class="fiyat-card-icon">🏗️</div>
-      <div class="fiyat-card-name">Çatı Hurdası Fiyatları</div>
-      <div class="fiyat-card-price">Teklif Al</div>
-      <div class="fiyat-card-unit">hacme & cins göre değişir</div>
-      <div class="fiyat-card-trend">↑ Ücretsiz keşif için arayın</div>
-    </div>
-  </div>
-  <div class="fiyat-note reveal">* Fiyatlar günlük piyasa koşullarına göre değişmektedir. Anlık ve kesin fiyat için lütfen arayın.</div>
-  <div class="fiyat-cta reveal">
-    <a href="tel:+905323316138">📞 Anlık Fiyat Almak İçin Arayın — 0532 331 61 38</a>
   </div>
 </section>
 
-  <!-- ════════════════════════════════
+<!-- ════════════════════════════════
      SIK SORULAN SORULAR (SSS)
 ════════════════════════════════ -->
 <section class="faq-section" aria-labelledby="faqBaslik">
@@ -1486,7 +1368,6 @@
     </div>
 
     <div class="faq-grid">
-      <!-- Soru 1 -->
       <div class="faq-item reveal delay-1">
         <button class="faq-question" aria-expanded="false">
           <span>Hurda fiyatları neye göre belirleniyor?</span>
@@ -1496,8 +1377,6 @@
           <p>Hurda fiyatları; küresel piyasalardaki emtia fiyatları, döviz kuru, hurdanın türü (bakır, demir, alüminyum vb.), saflık derecesi ve miktarına göre günlük olarak belirlenir. Güncel fiyat öğrenmek için bizi arayarak en doğru bilgiye ulaşabilirsiniz.</p>
         </div>
       </div>
-
-      <!-- Soru 2 -->
       <div class="faq-item reveal delay-2">
         <button class="faq-question" aria-expanded="false">
           <span>Hangi ilçelere hizmet veriyorsunuz?</span>
@@ -1507,8 +1386,6 @@
           <p>İzmir genelinde aktif hizmet veriyoruz. Başlıca hizmet bölgelerimiz: Bayraklı, Karşıyaka, Konak, Menderes, Çeşme, Kemalpaşa, Menemen, Balçova, Karabağlar ve Güzelbahçe. Bunun dışında kalan bir ilçede olsanız dahi bizi arayın, size en uygun çözümü sunalım.</p>
         </div>
       </div>
-
-      <!-- Soru 3 -->
       <div class="faq-item reveal delay-3">
         <button class="faq-question" aria-expanded="false">
           <span>Hurda taşıma için ek ücret alıyor musunuz?</span>
@@ -1518,8 +1395,6 @@
           <p>Hayır, İzmir sınırları içerisindeki tüm ilçelerimize <strong>ücretsiz taşıma hizmeti</strong> sunuyoruz. Hurda miktarınız ne olursa olsun, ekibimiz belirlediğimiz saatte gelir, yükleme ve taşıma işlemlerini ücretsiz olarak gerçekleştirir.</p>
         </div>
       </div>
-
-      <!-- Soru 4 -->
       <div class="faq-item reveal delay-1">
         <button class="faq-question" aria-expanded="false">
           <span>Ödeme nasıl ve ne zaman yapılır?</span>
@@ -1529,8 +1404,6 @@
           <p>Hurdanızın tartımı tamamlandıktan hemen sonra, <strong>aynı gün ve nakit olarak</strong> ödemenizi yaparız. İsterseniz banka havalesi veya EFT ile de ödemenizi gerçekleştirebiliriz. Ödemenizde asla gecikme yaşanmaz.</p>
         </div>
       </div>
-
-      <!-- Soru 5 -->
       <div class="faq-item reveal delay-2">
         <button class="faq-question" aria-expanded="false">
           <span>Az miktarda hurdam var, yine de gelir misiniz?</span>
@@ -1540,8 +1413,6 @@
           <p>Kesinlikle. İster birkaç kilo bakır kablo, ister bir çuval alüminyum olsun, her türlü miktar için kapınıza kadar geliyoruz. Müşteri memnuniyetimiz için hurda miktarı fark etmeksizin aynı profesyonel hizmeti sunuyoruz.</p>
         </div>
       </div>
-
-      <!-- Soru 6 -->
       <div class="faq-item reveal delay-3">
         <button class="faq-question" aria-expanded="false">
           <span>İzmir'de çatı hurdası alıyor musunuz?</span>
@@ -1551,8 +1422,6 @@
           <p>Evet, çatı hurdası (sac, galvaniz, oluklu çatı kaplamaları vb.) alımı yapıyoruz. Büyük hacimli işlerde ekibimiz yerinde keşif yaparak size en uygun fiyat teklifini sunar. Söküm ve taşıma hizmetimiz de mevcuttur.</p>
         </div>
       </div>
-      
-      <!-- Soru 7 (Ekstra - Daha kapsamlı olsun) -->
       <div class="faq-item reveal delay-1">
         <button class="faq-question" aria-expanded="false">
           <span>Hurda satmak için belge veya fatura gerekiyor mu?</span>
@@ -1569,6 +1438,34 @@
     </div>
   </div>
 </section>
+
+<!-- ════════════════════════════════
+     POPÜLER ARAMALAR
+════════════════════════════════ -->
+<section class="aramalar-section" id="populer-aramalar" aria-labelledby="aramaBaslik">
+  <div class="aramalar-inner">
+    <div class="section-label reveal">Popüler Aramalar</div>
+    <h2 class="section-title reveal" id="aramaBaslik">Sık Aranan Konular</h2>
+    <p class="section-desc reveal">İzmir hurda alanında en çok merak edilen konular ve hizmetlerimiz.</p>
+    <div class="arama-grid reveal">
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">📈</span> İzmir güncel hurda fiyatları 2026</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">⚖️</span> İzmir hurda kilosu ne kadar</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🟤</span> İzmir bakır hurda fiyatı</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🔩</span> İzmir demir hurda fiyatı</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🥇</span> İzmir sarı hurda fiyatı</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🛡️</span> İzmir paslanmaz hurda</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🔋</span> İzmir akü hurda fiyatı</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🔗</span> İzmir kablo hurda</a>
+      <a href="#fiyatlar" class="arama-pill"><span class="arama-pill-icon">🥉</span> İzmir pirinç hurda</a>
+      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">🏘️</span> İzmir evden hurda alanlar</a>
+      <a href="#hizmetler" class="arama-pill"><span class="arama-pill-icon">🏗️</span> İzmir çatı hurdası alan yerler</a>
+      <a href="#ilceler" class="arama-pill"><span class="arama-pill-icon">📍</span> İzmir hurda alan yerler</a>
+      <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">📞</span> İzmir hurdacı telefon numarası</a>
+      <a href="#iletisim" class="arama-pill"><span class="arama-pill-icon">✉️</span> İzmir hurdacı iletişim</a>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════════════════
      CTA BAND
 ════════════════════════════════ -->
@@ -1616,7 +1513,7 @@
         <li><a href="#hizmetler">Hizmetlerimiz</a></li>
         <li><a href="#hakkimizda">Hakkımızda</a></li>
         <li><a href="#fiyatlar">Hurda Fiyatları</a></li>
-        <li><a href="#popüler-aramalar">Sık Sorulanlar</a></li>
+        <li><a href="#populer-aramalar">Sık Sorulanlar</a></li>
       </ul>
       <div style="margin-top:1.4rem;color:rgba(255,255,255,.3);font-size:.83rem;line-height:2;">
         <strong style="color:rgba(255,255,255,.6)">Çalışma Saatleri</strong><br>
@@ -1682,18 +1579,16 @@
   }, { threshold: 0.10, rootMargin: '0px 0px -32px 0px' });
 
   revealEls.forEach(el => observer.observe(el));
-   // Sık Sorulan Sorular (FAQ) Accordion
+  
+  // Sık Sorulan Sorular (FAQ) Accordion
   const faqItems = document.querySelectorAll('.faq-item');
   
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
     
     questionBtn.addEventListener('click', () => {
-      // Aktif olanı kapatmak için (isteğe bağlı: aynı anda sadece bir soru açık olsun isterseniz)
       const isActive = item.classList.contains('active');
       
-      // Eğer aynı anda birden fazla sorunun açık kalmasını istiyorsanız, bu forEach döngüsünü yorum satırı yapın.
-      // Tek açık istiyorsanız aşağıdaki satırları kullanın:
       faqItems.forEach(otherItem => {
         if (otherItem !== item && otherItem.classList.contains('active')) {
           otherItem.classList.remove('active');
@@ -1702,14 +1597,13 @@
         }
       });
       
-      // Tıklanan öğeyi aç/kapat
       item.classList.toggle('active');
       const expanded = item.classList.contains('active');
       questionBtn.setAttribute('aria-expanded', expanded);
     });
   });
 </script>
-  <style>
+<style>
   /* Mobil Sabit Butonlar - Sadece mobilde görünür (max-width: 768px) */
   @media (max-width: 768px) {
     .mobile-action-buttons {
@@ -1747,26 +1641,22 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Sol Buton - Hemen Ara (Mavi) */
     .btn-call {
       background: linear-gradient(135deg, #1e88e5, #0d47a1);
       color: white;
     }
 
-    /* Sağ Buton - WhatsApp (Yeşil) */
     .btn-wa {
       background: linear-gradient(135deg, #25d366, #128c7e);
       color: white;
     }
 
-    /* İkon stilleri */
     .mobile-btn .icon {
       font-size: 22px;
       filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
     }
   }
 
-  /* Masaüstünde butonları gizle */
   @media (min-width: 769px) {
     .mobile-action-buttons {
       display: none !important;
