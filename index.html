@@ -1025,6 +1025,131 @@
     </div>
   </div>
 </div>
+  <!-- ============================================ -->
+<!-- HURDA FİYAT HESAPLAMA ARACI - İzmir Hurdacım  -->
+<!-- ============================================ -->
+<section class="hesap-araci" style="background: #ffffff; padding: 5rem 2rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    
+    <div class="section-label reveal" style="justify-content: center; display: flex; gap: 8px;">
+      ⚙️ HESAPLAMA ARACI
+    </div>
+    <h2 class="section-title reveal" style="text-align: center; font-size: clamp(1.8rem, 5vw, 2.8rem);">
+      Hurdanızın Değerini Anında Hesaplayın
+    </h2>
+    <p class="section-desc reveal" style="text-align: center; margin: 0 auto 2rem auto; max-width: 600px;">
+      Hurda cinsini seçin, kilogram miktarını ayarlayın, tahmini fiyatı anında görün.
+    </p>
+
+    <div class="hesap-kart" style="background: #f8f9f8; border-radius: 32px; padding: 2rem; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08); border: 1px solid #e2e8e2;">
+      
+      <!-- Hurda Türü Seçimi -->
+      <div style="margin-bottom: 2rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 12px; font-size: 0.9rem; color: #1A6B54;">📦 Hurda Cinsi</label>
+        <select id="hurdaTip" style="width: 100%; padding: 14px 18px; border-radius: 16px; border: 1px solid #d1d9d1; background: white; font-size: 1rem; outline: none; transition: 0.2s; cursor: pointer;">
+          <option value="demir">🔩 Hurda Demir (₺12/kg)</option>
+          <option value="bakir">🟤 Kırmızı Bakır (₺450/kg)</option>
+          <option value="aluminyum">⚪ Alüminyum Profil (₺85/kg)</option>
+          <option value="pirinç">🥇 Sarı Pirinç (₺200/kg)</option>
+          <option value="paslanmaz">🛡️ Paslanmaz 304 (₺25/kg)</option>
+          <option value="kablo">🔌 Kablo Hurda (₺130/kg)</option>
+        </select>
+      </div>
+
+      <!-- KG Ayarı (Slider + Sayı) -->
+      <div style="margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+          <label style="font-weight: 600; font-size: 0.9rem; color: #1A6B54;">⚖️ Miktar (Kilogram)</label>
+          <span style="background: white; padding: 5px 16px; border-radius: 40px; font-weight: 700; color: #111; border: 1px solid #e2e8e2;">
+            <span id="kgDegeri">500</span> kg
+          </span>
+        </div>
+        <input type="range" id="kgSlider" min="1" max="5000" value="500" step="10" style="width: 100%; height: 6px; border-radius: 10px; background: #d1d9d1; accent-color: #E8A800;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: #6B7280; margin-top: 6px;">
+          <span>1 kg</span>
+          <span>1000 kg</span>
+          <span>2500 kg</span>
+          <span>5000 kg</span>
+        </div>
+      </div>
+
+      <!-- Fiyat Sonuç Kartı -->
+      <div style="background: linear-gradient(135deg, #1A6B54 0%, #2D9970 100%); border-radius: 24px; padding: 1.8rem; text-align: center; color: white; margin-bottom: 1rem;">
+        <div style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.8; margin-bottom: 6px;">TAHMİNİ HURDA BEDELİ</div>
+        <div style="font-size: 2.6rem; font-weight: 800; font-family: 'Playfair Display', serif; line-height: 1;" id="toplamTutar">6.000 ₺</div>
+        <div style="font-size: 0.8rem; margin-top: 12px; opacity: 0.7;">Güncel piyasa fiyatlarıyla hesaplanmıştır.</div>
+      </div>
+
+      <!-- Not + Harekete Geçirici Mesaj -->
+      <div style="text-align: center; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #e2e8e2; padding-top: 1.2rem;">
+        💡 <strong>Not:</strong> Fiyatlar günlük değişebilir. Kesin fiyat için <a href="tel:+905323316138" style="color:#1A6B54; font-weight:600;">bizi arayın</a> veya WhatsApp ile iletişime geçin.
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;">
+        <a href="tel:+905323316138" style="background: #E8A800; padding: 12px 24px; border-radius: 40px; text-decoration: none; color: #111; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">📞 Hemen Ara</a>
+        <a href="https://wa.me/905323316138" target="_blank" style="background: #25D366; padding: 12px 24px; border-radius: 40px; text-decoration: none; color: white; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">💬 WhatsApp ile Fiyat Sor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    // Hurda birim fiyatları (TL/kg) - Güncel piyasaya göre düzenleyebilirsiniz
+    const fiyatlar = {
+      demir: 12,
+      bakir: 450,
+      aluminyum: 85,
+      pirinc: 200,
+      paslanmaz: 25,
+      kablo: 130
+    };
+
+    // DOM Elemanları
+    const hurdaTipSelect = document.getElementById('hurdaTip');
+    const kgSlider = document.getElementById('kgSlider');
+    const kgDegeriSpan = document.getElementById('kgDegeri');
+    const toplamTutarSpan = document.getElementById('toplamTutar');
+
+    // Fiyatı güncelleme fonksiyonu
+    function hesaplaVeGoster() {
+      const secilenHurda = hurdaTipSelect.value;
+      const kg = parseFloat(kgSlider.value);
+      const birimFiyat = fiyatlar[secilenHurda];
+      const toplam = kg * birimFiyat;
+
+      // KG değerini yazdır
+      kgDegeriSpan.innerText = Math.floor(kg); // tam sayı gösterimi
+      
+      // Toplam tutarı formatla (TL)
+      toplamTutarSpan.innerText = toplam.toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' ₺';
+    }
+
+    // Olay dinleyicileri
+    hurdaTipSelect.addEventListener('change', hesaplaVeGoster);
+    kgSlider.addEventListener('input', hesaplaVeGoster);
+
+    // İlk açılışta hesapla
+    hesaplaVeGoster();
+  })();
+</script>
+
+<style>
+  /* Hesaplama aracı için ek stil iyileştirmeleri (isteğe bağlı) */
+  .hesap-araci select:hover,
+  .hesap-araci select:focus {
+    border-color: #E8A800;
+    box-shadow: 0 0 0 2px rgba(232,168,0,0.2);
+  }
+  .hesap-araci input[type="range"] {
+    cursor: pointer;
+  }
+  @media (max-width: 640px) {
+    .hesap-kart {
+      padding: 1.5rem;
+    }
+  }
+</style>
 
 <!-- ════════════════════════════════
      HİZMETLER (NE ALIYORUZ?)
